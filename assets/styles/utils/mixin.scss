@@ -1,0 +1,70 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    src: local("#{$font-family}"),
+    url("#{$file-path}.woff") format("woff"),
+    url("#{$file-path}.woff2") format("woff2"),
+    url("#{$file-path}.ttf") format("truetype");
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin styles-p {
+  text-align: left;
+  font-family: "Mplus1P-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 163%;
+  font-weight: 400;
+}
+
+// --- Breakpoints ---
+$breakpoint-xxl: 1400px;
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
+// --- Breakpoints ---
+@mixin sm {
+  @media screen and (max-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (max-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media screen and (max-width: #{$breakpoint-xxl}) {
+    @content;
+  }
+}
+
+@mixin min-width($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}

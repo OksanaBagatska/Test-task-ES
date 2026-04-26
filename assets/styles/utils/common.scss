@@ -1,0 +1,189 @@
+@import "mixin";
+@import "base";
+
+// --- Font faces ---
+@include font-face("MPLUS1p-Black", "../../fonts/Mplus1P/MPLUS1p-Black", 800);
+@include font-face(
+  "MPLUS1p-ExtraBold",
+  "../../fonts/Mplus1P/MPLUS1p-ExtraBold",
+  900
+);
+@include font-face("MPLUS1p-Medium", "../../fonts/Mplus1P/MPLUS1p-Medium", 500);
+@include font-face(
+  "MPLUS1p-Regular",
+  "../../fonts/Mplus1P/MPLUS1p-Regular",
+  400
+);
+@include font-face(
+  "NoticiaText-italic",
+  "../../fonts/NoticiaText/NoticiaText-italic"
+);
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "MPLUS1p-Regular", sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  &.fixed {
+    overflow: hidden;
+  }
+}
+
+.container {
+   box-sizing: border-box;
+   position: relative;
+  max-width: 1186px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+.h1 {
+  font-family: "MPLUS1p-ExtraBold", sans-serif;
+  font-size: 99px;
+  line-height: 118px;
+  @include xl {
+    font-size: 80px;
+    line-height: 90px;
+  }
+  @include lg {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  @include md {
+    font-size: 48px;
+  }
+  @include sm {
+    font-size: 43px;
+    line-height: 50px;
+  }
+}
+
+h2,
+.h2 {
+  font-family: "Mplus1P-Medium", sans-serif;
+  font-size: 45px;
+  font-weight: 500;
+  margin: 0;
+
+  @include sm {
+    font-size: 30px;
+    line-height: 45px;
+  }
+}
+
+h3,
+.h3 {
+  font-family: "Mplus1P-Medium", sans-serif;
+  font-size: 39px;
+  font-weight: 500;
+  margin: 0;
+  @include sm {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+
+h4,
+.h4 {
+  font-family: "Mplus1P-Medium", sans-serif;
+  @include md {
+    font-size: 32px;
+  }
+}
+
+p {
+  @include styles-p;
+  margin: 0;
+  word-wrap: break-word;
+  @include md {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+a {
+  text-decoration: unset;
+  transition: opacity 0.7s;
+  word-wrap: break-word;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.subtitle {
+  color: $primary;
+  text-align: left;
+  font-family: "Mplus1P-ExtraBold";
+  font-size: 13px;
+  line-height: 208%;
+  letter-spacing: 6px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.lead {
+  color: $headers;
+  text-align: left;
+  font-family: "Mplus1P-ExtraBold";
+  font-size: 18px;
+  line-height: 163%;
+  font-weight: 800;
+
+  @include md {
+    font-size: 16px;
+  }
+}
+
+.primary-btn {
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $white;
+  width: 197px;
+  height: 45px;
+  background: $primary;
+  border-radius: 36px;
+  border: none;
+  transition: all linear 0.3s;
+  &:hover {
+    filter: sepia(30%);
+  }
+}
+
+.text {
+  text-align: left;
+  font-family: "Mplus1P-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 163%;
+  font-weight: 400;
+}
+
+@keyframes moveDown {
+  0%, 100% {
+    transform: rotate(-90deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-90deg) translateY(10px);
+  }
+}

@@ -1,0 +1,190 @@
+.intro {
+  padding-top: 108px;
+  padding-bottom: 135px;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 10;
+
+  @include lg {
+    padding: 70px 0;
+  }
+
+  &__wrap {
+    position: static;
+
+    @include lg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__info {
+    max-width: 460px;
+    width: 100%;
+    margin-right: 128px;
+    padding-top: 70px;
+
+    @include lg {
+      margin-right: 0;
+      margin-bottom: 40px;
+      padding-top: 0;
+      max-width: 600px;
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 10px;
+    color: $primary;
+  }
+
+  &__title {
+    margin-bottom: 19px;
+    margin-top: 0;
+    color: $headers;
+  }
+
+  &__lead {
+    margin-top: 0;
+    margin-bottom: 40px;
+    color: $headers;
+  }
+
+  &__text {
+    margin-bottom: 54px;
+    color: $text;
+  }
+
+  &__image {
+    position: absolute;
+    top: 144px;
+    right: 245px;
+    @include xl {
+      display: none;
+    }
+
+    @include lg {
+      display: block;
+      position: relative;
+      right: unset;
+      top: unset;
+    }
+
+    img {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  &__note {
+    position: absolute;
+    top: 144px;
+    right: 0px;
+    width: 377px;
+    height: 504px;
+    background-color: $secondary-300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include lg {
+      position: static;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      padding: 40px 10px;
+    }
+
+    &::before {
+      content: "";
+      width: calc(100% + 64px);
+      height: 100%;
+      background-color: $secondary-300;
+      position: absolute;
+      top: -36px;
+      left: -64px;
+      z-index: -1;
+
+      @include xl {
+        top: 0;
+        left: -64px;
+      }
+
+      @include lg {
+        display: none;
+      }
+    }
+
+    &-text {
+      max-width: 255px;
+      margin: 0 auto;
+      font-family: "NoticiaText-italic";
+      font-size: 22.5px;
+      line-height: 40px;
+      color: $white;
+      position: relative;
+
+      @include lg {
+        max-width: none;
+        width: 100%;
+        text-align: center;
+        padding: 0 60px;
+      }
+
+      @include md {
+        padding: 0 20px;
+        font-size: 20px;
+        line-height: 35px;
+      }
+
+      &::before,
+      &::after {
+        content: "“";
+        position: absolute;
+        top: -102px;
+        left: 25%;
+        color: $light-grey;
+        text-align: left;
+        font-family: "NoticiaText-italic";
+        font-size: 161px;
+        line-height: 1;
+        font-weight: 700;
+        opacity: 0.25;
+
+        @include md {
+          font-size: 70px;
+        }
+      }
+      &::after {
+        content: "”";
+        top: 130%;
+        left: 30%;
+      
+        @include lg {
+          left: auto;
+          right: 0;
+          bottom: 50%;
+          transform: translateY(50%) rotate(180deg);
+        }
+        @include md {
+          top: unset;
+          bottom: 2%;
+        }
+      }
+
+      &::before {
+        @include lg {
+          left: 0;
+          top: 104%;
+          transform: translateY(-50%);
+        }
+        @include md {
+          top: 5%;
+         }
+      }
+    }
+  }
+}
